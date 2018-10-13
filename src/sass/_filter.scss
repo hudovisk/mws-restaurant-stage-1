@@ -1,8 +1,13 @@
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
+  // Box model
   width: 100%;
-  height: 50px;
+  padding: 12px;
+
+  // Visual
   background-color: #3397db;
+
+  // Typography
   align-items: center;
 }
 .filter-options h2 {

@@ -9,6 +9,10 @@ nav h1 {
   margin: auto;
 }
 nav h1 a {
+  // Box model
+  padding: 12px;
+
+  // Typography
   color: #fff;
   font-size: 14pt;
   font-weight: 200;

@@ -1,9 +1,16 @@
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-  background-color: #f3f3f3;
-  list-style: outside none none;
+  // Box Model
   margin: 0;
   padding: 30px 15px 60px;
+  display: flex;
+  flex-wrap: wrap;
+
+  // Visual
+  background-color: #f3f3f3;
+  list-style: outside none none;
+
+  // Typography
   text-align: center;
 }
 #restaurants-list li {

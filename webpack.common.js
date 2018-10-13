@@ -4,27 +4,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
-  mode: "development",
   entry: {
-    polyfill: "@babel/polyfill",
-    main: [
-      path.resolve(__dirname, "src/sass/index.scss"),
-      path.resolve(__dirname, "src/js/pages/main/index.js")
+    shared: [
+      "@babel/polyfill",
+      path.resolve(__dirname, "src/js/pages/shared.js"),
+      path.resolve(__dirname, "src/sass/index.scss")
     ],
-    restaurant: [
-      path.resolve(__dirname, "src/sass/index.scss"),
-      path.resolve(__dirname, "src/js/pages/restaurant/index.js")
-    ]
+    main: path.resolve(__dirname, "src/js/pages/main/index.js"),
+    restaurant: path.resolve(__dirname, "src/js/pages/restaurant/index.js")
   },
   output: {
     path: path.resolve(__dirname, "build/"),
-    publicPath: "/",
-    filename: "js/[name].js"
-  },
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: path.resolve(__dirname, "build/"),
-    overlay: true
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -46,11 +37,16 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          "file-loader",
+          {
+            loader: "file-loader",
+            options: {
+              name: "img/[hash].[ext]"
+            }
+          },
           {
             loader: "image-webpack-loader",
             options: {
-              disable: true // webpack@2.x and newer
+              disable: process.env.NODE_ENV != "production"
             }
           }
         ]
@@ -61,7 +57,7 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: { name: "[name].[ext]" }
+            options: { name: "data/[name].[ext]" }
           }
         ]
       }
@@ -73,11 +69,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["build"]),
     new HtmlWebpackPlugin({
-      chunks: ["polyfill", "css", "main"],
+      chunks: ["shared", "main"],
       template: path.resolve(__dirname, "src/index.html")
     }),
     new HtmlWebpackPlugin({
-      chunks: ["polyfill", "css", "restaurant"],
+      chunks: ["shared", "restaurant"],
       template: path.resolve(__dirname, "src/restaurant.html"),
       filename: "restaurant.html"
     }),
