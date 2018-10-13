@@ -2,7 +2,7 @@ import "./setup";
 
 // require all modules ending in ".spec.js" from the
 // js directory and all subdirectories
-const testsContext = require.context("../js/", true, /\.spec\.js$/);
+const testsContext = require.context("./specs/", true, /\.spec\.js$/);
 
 // only re-run changed tests, or all if none changed
 // https://www.npmjs.com/package/karma-webpack-with-fast-source-maps

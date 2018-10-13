@@ -3,7 +3,53 @@
 
 # Mobile Web Specialist Certification Course
 
+## How to
+
+- install dependencies
+
+```
+yarn
+```
+
+- run dev server
+
+```
+yarn start
+```
+
+- run tests
+
+```
+yarn test
+```
+
+- run build
+
+```
+yarn build
+```
+
+## Folder structure
+
+```
+ src/
+ |
+ |- js
+ | |- pages
+ | | |- main              // index page
+ | | | |- main.controller // page controller (business logic)
+ | | | |- main.page       // page object (access dom elements)
+ | | |
+ | | |- restaurant // restaurant details
+ |
+ | |- providers    // responsible for data fetching
+ | | |- cuisines.js
+ | | |- neighborhoods.js
+ | | |- restaurants.js
 ---
+```
+
+# Original README
 
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
@@ -32,3 +78,7 @@ This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://w
 ### Note about ES6
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write.
+
+```
+
+```

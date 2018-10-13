@@ -6,7 +6,7 @@
         [
           "istanbul",
           {
-            "exclude": ["**/*.spec.js", "test"]
+            "exclude": ["test"]
           }
         ]
       ]

@@ -1,4 +1,4 @@
-import * as restaurantProvider from "./restaurants";
+import * as restaurantProvider from "src/js/providers/restaurants";
 
 describe("restaurantProvider", function() {
   it("should fetch all", async () => {
@@ -25,5 +25,23 @@ describe("restaurantProvider", function() {
   it("should fetch by cuisine", async () => {
     const restaurants = await restaurantProvider.fetchByCuisine("Asian");
     expect(restaurants).to.be.an("array").that.is.not.empty;
+  });
+
+  describe("fetch by cuisine and neighborhood", () => {
+    it("should filter by cuisine and neighborhood", async () => {
+      const restaurants = await restaurantProvider.fetchByCuisineAndNeighborhood(
+        "Asian",
+        "Manhattan"
+      );
+      expect(restaurants).to.be.an("array").that.is.not.empty;
+    });
+
+    it("should accept 'all' as cuisine and neighborhood", async () => {
+      const restaurants = await restaurantProvider.fetchByCuisineAndNeighborhood(
+        "all",
+        "all"
+      );
+      expect(restaurants).to.be.an("array").that.is.not.empty;
+    });
   });
 });
