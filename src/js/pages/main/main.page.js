@@ -52,6 +52,7 @@ function createRestaurantHTML(restaurant) {
 
   const image = document.createElement("img");
   image.className = "restaurant-img";
+  image.alt = "";
   image.src = restaurant.photograph_url;
   li.append(image);
 
@@ -83,4 +84,8 @@ export function fillRestaurantsHTML(restaurants) {
   restaurants.forEach(restaurant =>
     ul.append(createRestaurantHTML(restaurant))
   );
+
+  const status = document.getElementById("list-status");
+  status.innerText = "";
+  status.innerText = "List updated!";
 }

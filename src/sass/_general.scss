@@ -11,9 +11,16 @@ p {
   line-height: 1.5;
 }
 body {
-  background-color: #fdfdfd;
-  margin: 0;
+  // Position
   position: relative;
+
+  // Box model
+  margin: 0;
+
+  // Visual
+  background-color: #fdfdfd;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 ul,
 li {
@@ -62,10 +69,16 @@ section {
 }
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #b2b0b0;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.screen-reader {
+  // Position
+  position: absolute;
+  left: -1000px;
 }

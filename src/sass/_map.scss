@@ -3,4 +3,8 @@
   height: 400px;
   width: 100%;
   background-color: #ccc;
+
+  &:focus {
+    outline: auto 5px blue;
+  }
 }
