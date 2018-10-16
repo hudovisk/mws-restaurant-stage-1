@@ -3,12 +3,8 @@ class MapBox {
    * Map constructor
    * @param {string} mapId Map container id
    */
-  constructor(mapId) {
-    this.map = L.map(mapId, {
-      center: [40.722216, -73.987501],
-      zoom: 12,
-      scrollWheelZoom: false
-    });
+  constructor(mapId, options) {
+    this.map = L.map(mapId, options);
 
     L.tileLayer(
       "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={mapboxToken}",

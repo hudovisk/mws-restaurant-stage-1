@@ -20,7 +20,12 @@ class MainController {
   }
 
   init() {
-    this.map = new MapBox("map");
+    this.map = new MapBox("map", {
+      center: [40.722216, -73.987501],
+      zoom: 12,
+      scrollWheelZoom: false
+    });
+
     return Promise.all([
       this._loadNeighborhoods(),
       this._loadCuisines(),

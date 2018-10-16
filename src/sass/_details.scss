@@ -7,7 +7,7 @@
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: calc(100vh - 80px);
   position: fixed;
   right: 0;
   top: 80px;
@@ -19,10 +19,12 @@
   width: 100%;
 }
 .inside #footer {
-  bottom: 0;
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 50%;
 }
+
 #restaurant-name {
   color: #f18200;
   font-family: Arial, sans-serif;
@@ -34,7 +36,8 @@
   line-height: 1.1;
 }
 #restaurant-img {
-  width: 90%;
+  width: 100%;
+  border-top-left-radius: 20px;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -50,7 +53,7 @@
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-  width: 90%;
+  width: 100%;
 }
 #restaurant-container,
 #reviews-container {
@@ -74,19 +77,73 @@
   padding: 0;
 }
 #reviews-list li {
+  position: relative;
+
+  display: block;
+  margin-bottom: 30px;
+  padding: 60px 20px 20px 20px;
+
   background-color: #fff;
   border: 2px solid #f3f3f3;
-  display: block;
+  border-top-left-radius: 20px;
   list-style-type: none;
-  margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
-  position: relative;
-  width: 85%;
+
+  .info {
+    // Position
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    // Box Model
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 50px;
+    width: 100%;
+    padding: 1em;
+
+    // Visual
+    background-color: #333;
+
+    p {
+      // Box Model
+      margin: 0;
+
+      // Typography
+      color: #fff;
+      font-size: 1.2em;
+      line-height: 25px;
+
+      &:nth-child(2) {
+        color: #ddd;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .rating {
+    // Box Model
+    display: inline-block;
+    padding: 3px 6px;
+
+    // Visual
+    background-color: #f58500;
+
+    // Typography
+    color: #fff;
+    text-transform: uppercase;
+  }
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
+  padding-top: 6px;
+  padding-right: 18px;
   color: #666;
+
+  &:last-child {
+    padding-right: 0px;
+  }
 }

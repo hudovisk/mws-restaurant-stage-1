@@ -12,7 +12,7 @@ const mainController = new MainController(
   cuisinesProvider
 );
 
-document.addEventListener("DOMContentLoaded", event => {
+document.addEventListener("DOMContentLoaded", () => {
   mainController.init();
 
   mainPage.getCuisinesSelect().addEventListener("change", () => {

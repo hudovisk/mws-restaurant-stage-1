@@ -57,12 +57,12 @@ module.exports = function(config) {
     },
 
     preprocessors: {
-      "test/tests.bundle.js": ["webpack", "sourcemap"]
+      "test/tests.bundle.js": ["webpack"]
     },
     webpack: {
       entry: "./test/tests.bundle.js",
       externals: webpackConfig.externals,
-      devtool: "inline-source-map",
+      devtool: "cheap-module-source-map",
       module: webpackConfig.module,
       plugins: webpackConfig.plugins,
       resolve: webpackConfig.resolve

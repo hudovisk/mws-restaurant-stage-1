@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import chai from "chai";
+import sinon from "sinon";
 import chaiAsPromised from "chai-as-promised";
 
 // ----------------------------------------
@@ -14,3 +15,8 @@ mocha.setup({
 // ----------------------------------------
 chai.use(chaiAsPromised);
 global.expect = chai.expect;
+
+global.L = {
+  map: sinon.spy(),
+  tileLayer: sinon.spy()
+};
