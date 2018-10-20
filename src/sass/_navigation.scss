@@ -38,7 +38,7 @@ nav h1 a {
   background-color: #eee;
   font-size: 17px;
   margin: 0;
-  width: 50%;
+  width: 100%;
 }
 
 /* Display list items side by side */
@@ -55,7 +55,7 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-  color: #0275d8;
+  color: #036cc7;
   text-decoration: none;
 }
 
@@ -63,4 +63,10 @@ nav h1 a {
 #breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  #breadcrumb {
+    width: 50%;
+  }
 }

@@ -44,10 +44,12 @@ class MainController {
 
     // Add new markers to the map
     this._markers = this._restaurants.map(this.map.mapMarkerForRestaurant);
-    this._markers.forEach(marker =>
-      marker.on("click", () => {
-        window.location.href = marker.options.url;
-      })
+    this._markers.forEach(
+      marker =>
+        marker &&
+        marker.on("click", () => {
+          window.location.href = marker.options.url;
+        })
     );
   }
 
