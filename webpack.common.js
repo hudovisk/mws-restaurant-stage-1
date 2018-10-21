@@ -81,7 +81,18 @@ module.exports = {
       // these options encourage the ServiceWorkers to get in there fast
       // and not allow any straggling "old" SWs to hang around
       clientsClaim: true,
-      skipWaiting: true
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /restaurant\.html/,
+          handler: "networkFirst",
+          options: {
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        }
+      ]
     })
   ]
 };
